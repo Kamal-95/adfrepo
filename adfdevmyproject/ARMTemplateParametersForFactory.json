@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdevmyproject"
+		},
+		"LS_SINK_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_TARGET_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_source_CSV_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"LS_SINK_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevmyproject.dfs.core.windows.net/"
+		},
+		"LS_TARGET_CSV_properties_typeProperties_url": {
+			"value": "https://adlsnewproject001.dfs.core.windows.net/"
+		},
+		"LS_source_CSV_properties_typeProperties_url": {
+			"value": "https://adlsnewproject001.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "VAIBHAV\\SQLEXPRESS"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "sa"
+		}
+	}
+}
