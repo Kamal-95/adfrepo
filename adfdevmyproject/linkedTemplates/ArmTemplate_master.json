@@ -7,9 +7,25 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfdevmyproject"
 		},
+		"LS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV'"
+		},
 		"LS_SINK_CSV_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SINK_CSV'"
+		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
+		"LS_SQL1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL1'"
+		},
+		"LS_SQL_SERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_SERVER'"
 		},
 		"LS_TARGET_CSV_accountKey": {
 			"type": "secureString",
@@ -23,9 +39,49 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"LS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsnewproject001.dfs.core.windows.net/"
+		},
 		"LS_SINK_CSV_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevmyproject.dfs.core.windows.net/"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQL1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SQL1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
 		},
 		"LS_TARGET_CSV_properties_typeProperties_url": {
 			"type": "string",
@@ -74,8 +130,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_CSV_accountKey": {
+						"value": "[parameters('LS_CSV_accountKey')]"
+					},
 					"LS_SINK_CSV_accountKey": {
 						"value": "[parameters('LS_SINK_CSV_accountKey')]"
+					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
+					"LS_SQL_SERVER_password": {
+						"value": "[parameters('LS_SQL_SERVER_password')]"
 					},
 					"LS_TARGET_CSV_accountKey": {
 						"value": "[parameters('LS_TARGET_CSV_accountKey')]"
@@ -83,17 +148,50 @@
 					"LS_source_CSV_accountKey": {
 						"value": "[parameters('LS_source_CSV_accountKey')]"
 					},
+					"LS_SQL1_password": {
+						"value": "[parameters('LS_SQL1_password')]"
+					},
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
 					},
+					"LS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_properties_typeProperties_url')]"
+					},
 					"LS_SINK_CSV_properties_typeProperties_url": {
 						"value": "[parameters('LS_SINK_CSV_properties_typeProperties_url')]"
+					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_SERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_SERVER_properties_typeProperties_server')]"
+					},
+					"LS_SQL_SERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_SERVER_properties_typeProperties_database')]"
+					},
+					"LS_SQL_SERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_SERVER_properties_typeProperties_userName')]"
 					},
 					"LS_TARGET_CSV_properties_typeProperties_url": {
 						"value": "[parameters('LS_TARGET_CSV_properties_typeProperties_url')]"
 					},
 					"LS_source_CSV_properties_typeProperties_url": {
 						"value": "[parameters('LS_source_CSV_properties_typeProperties_url')]"
+					},
+					"LS_SQL1_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL1_properties_typeProperties_server')]"
+					},
+					"LS_SQL1_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL1_properties_typeProperties_database')]"
+					},
+					"LS_SQL1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL1_properties_typeProperties_userName')]"
 					},
 					"SqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
@@ -107,6 +205,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adfdevmyproject_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdevmyproject_ArmTemplate_0')]"
+			]
 		}
 	]
 }

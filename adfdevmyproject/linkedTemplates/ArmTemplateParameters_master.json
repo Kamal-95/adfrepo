@@ -5,7 +5,19 @@
 		"factoryName": {
 			"value": "adfdevmyproject"
 		},
+		"LS_CSV_accountKey": {
+			"value": ""
+		},
 		"LS_SINK_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LS_SQL1_password": {
+			"value": ""
+		},
+		"LS_SQL_SERVER_password": {
 			"value": ""
 		},
 		"LS_TARGET_CSV_accountKey": {
@@ -17,8 +29,38 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
+		"LS_CSV_properties_typeProperties_url": {
+			"value": "https://adlsnewproject001.dfs.core.windows.net/"
+		},
 		"LS_SINK_CSV_properties_typeProperties_url": {
 			"value": "https://adlsdevmyproject.dfs.core.windows.net/"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL1_properties_typeProperties_server": {
+			"value": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQL1_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_server": {
+			"value": "VAIBHAV\\SQLEXPRESS"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_userName": {
+			"value": "sa"
 		},
 		"LS_TARGET_CSV_properties_typeProperties_url": {
 			"value": "https://adlsnewproject001.dfs.core.windows.net/"
