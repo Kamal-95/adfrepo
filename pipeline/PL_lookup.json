@@ -22,11 +22,7 @@
 					},
 					"dataset": {
 						"referenceName": "SqlServerTable1",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_schema": "ctl",
-							"ds_table": "config"
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}

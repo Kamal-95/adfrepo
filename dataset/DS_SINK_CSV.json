@@ -2,7 +2,7 @@
 	"name": "DS_SINK_CSV",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_TARGET_CSV",
+			"referenceName": "LS_CSV",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "output_csv_folder",
+				"folderPath": "newfolderforeach",
 				"fileSystem": "adfsink"
 			},
 			"columnDelimiter": ",",

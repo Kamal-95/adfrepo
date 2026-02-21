@@ -6,10 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"ds_schema": {
+			"dstable": {
 				"type": "string"
 			},
-			"ds_table": {
+			"dsschema": {
 				"type": "string"
 			}
 		},
@@ -38,11 +38,11 @@
 		],
 		"typeProperties": {
 			"schema": {
-				"value": "@dataset().ds_schema",
+				"value": "@dataset().dsschema",
 				"type": "Expression"
 			},
 			"table": {
-				"value": "@dataset().ds_table",
+				"value": "@dataset().dstable",
 				"type": "Expression"
 			}
 		}

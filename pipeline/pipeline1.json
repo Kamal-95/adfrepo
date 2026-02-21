@@ -44,17 +44,7 @@
 				"inputs": [
 					{
 						"referenceName": "SqlServerTable1",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_schema": {
-								"value": "@pipeline().parameters.plschema",
-								"type": "Expression"
-							},
-							"ds_table": {
-								"value": "@pipeline().parameters.pltablename",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
